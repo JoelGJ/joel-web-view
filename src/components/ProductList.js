@@ -5,6 +5,14 @@ import './ProductList.css'
 export default function ProductList({ data }) {
     const productDetails = data;
     
+    function truncateTitle(title) {
+        const maxChars = 22;
+        if (title.length <= maxChars) {
+            return title;
+        }
+        return title.substring(0, maxChars) + '...';
+    }
+
     function truncateDescription(description) {
         const maxChars = 75;
         if (description.length <= maxChars) {
@@ -35,7 +43,7 @@ export default function ProductList({ data }) {
                     <div key={product.id} className="product-card">
                         <img src={product.thumbnail} className="product-image"></img>
                         <div className="product-details">
-                            <div className="product-title">{product.title}</div>
+                            <div className="product-title">{truncateTitle(product.title)}</div>
                             <div className="product-description">{truncateDescription(product.description)}</div>
                             <div className="rating-icon" style={calculateColorWithRating(product.rating.toFixed(1))}><span className="rating">{product.rating.toFixed(1)}</span> ★</div>
                             <div className="product-price">

@@ -14,6 +14,7 @@
     border: 1px solid #ccc;
     padding: 10px;
     position: relative;
+    border-radius: 5px;
 }
 
 .product-image {
@@ -32,12 +33,13 @@
 }
 
 .product-description {
-    font-size: 12px;;
+    font-size: 0.7rem;;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    height: 35px;
 }
 
 .discount-price {
@@ -45,7 +47,7 @@
 }
 
 .actual-price {
-    font-size: 12px;
+    font-size: 0.7rem;
     text-decoration: line-through;
 }
 .rating-icon {
@@ -56,10 +58,10 @@
 }
 
 .rating {
-    font-size: 12px;
+    font-size: 0.7rem;
 }
 
 .product-stock {
-    font-size: 12px;
+    font-size: 0.8rem;
     color: #d50000;
 }
