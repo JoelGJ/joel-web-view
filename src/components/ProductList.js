@@ -3,7 +3,7 @@ import WebServer from "../APIs/WebServer";
 import './ProductList.css'
 
 export default function ProductList({ data }) {
-    const productsDetails = data;
+    const productDetails = data;
     
     function truncateDescription(description) {
         const maxChars = 75;
@@ -15,24 +15,32 @@ export default function ProductList({ data }) {
 
     function calculateColorWithRating (rating) {
         if (rating < 2.5) {
-            return {backgroundColor : '#ff6767'}
+            return {backgroundColor : '#ff5d5d'}
         } else if (rating > 2.5 && rating < 3.5) {
-            return {backgroundColor : '#ffd07b'}
-        } else if (rating > 3.5) {
-            return {backgroundColor : '##6aff6a'}
+            return {backgroundColor : '#f4b619'}
+        } else {
+            return {backgroundColor : '#23bb75', color : 'white'}
         }
     }
+
+    function calculateActualPrice (discountedPrice, discountPercentage) {
+        let actualPrice = discountedPrice + (discountedPrice * (discountPercentage / 100));
+        return actualPrice.toFixed(0);
+    }
+
     return (
         <>
             <div className="product-list-container">
-                {productsDetails.products && productsDetails.products.map(product => (
+                {productDetails.products && productDetails.products.map(product => (
                     <div key={product.id} className="product-card">
                         <img src={product.thumbnail} className="product-image"></img>
                         <div className="product-details">
                             <div className="product-title">{product.title}</div>
                             <div className="product-description">{truncateDescription(product.description)}</div>
-                            <div className="rating-icon" style={calculateColorWithRating(product.rating.toFixed(1))}><span className="rating">{product.rating.toFixed(1)}</span>★</div>
-                            <div className="product-price">${product.price}</div>
+                            <div className="rating-icon" style={calculateColorWithRating(product.rating.toFixed(1))}><span className="rating">{product.rating.toFixed(1)}</span> ★</div>
+                            <div className="product-price">
+                                <span className="discount-price">${product.price}</span> {product.discountPercentage > 0 ? <span className="actual-price">${calculateActualPrice(product.price, product.discountPercentage)}</span> : ''} <span className="product-stock">{product.stock <= 20 ? 'Only ' + product.stock + ' left in stock' : ''}</span>
+                            </div>
                         </div>
                     </div>
                 ))}
