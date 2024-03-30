@@ -7,7 +7,7 @@ export default function NavBar ({ handleSearchRequest }) {
     const closeIconRef = useRef(null);
 
     const handleSearchBarOnChange = () => {
-        if (searchBarInput.current.value == '') {
+        if (searchBarInput.current.value === '') {
             closeIconRef.current.style.display = 'none';
             searchIconRef.current.style.display = 'block';
             searchBarInput.current.style.fontWeight = 'normal';

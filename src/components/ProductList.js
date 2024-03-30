@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import WebServer from "../APIs/WebServer";
+import React from "react";
 import './ProductList.css'
 
 export default function ProductList({ data }) {
@@ -41,7 +40,7 @@ export default function ProductList({ data }) {
             <div className="product-list-container">
                 {productDetails.products && productDetails.products.map(product => (
                     <div key={product.id} className="product-card">
-                        <img src={product.thumbnail} className="product-image"></img>
+                        <img src={product.thumbnail} alt={product.title} className="product-image"></img>
                         <div className="product-details">
                             <div className="product-title">{truncateTitle(product.title)}</div>
                             <div className="product-description">{truncateDescription(product.description)}</div>
