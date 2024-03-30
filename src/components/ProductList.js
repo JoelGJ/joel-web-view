@@ -1,9 +1,20 @@
 import React from "react";
+import noResultsImage from '../images/error-no-search-results.png';
 import './ProductList.css'
 
 export default function ProductList({ data }) {
     const productDetails = data;
-    
+
+    if (productDetails.products && productDetails.products.length === 0) {
+        return (
+            <div className="no-results-image-container">
+                <img src={noResultsImage} alt="No results found" />
+                <div className="heading">Sorry, no results found!</div>
+                <div className="message">Please check the spelling or try searching for something else</div>
+            </div>
+        );
+    }
+
     function truncateTitle(title) {
         const maxChars = 22;
         if (title.length <= maxChars) {
