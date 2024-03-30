@@ -70,7 +70,7 @@ export default function MainScreen() {
             <ProductList data={products} />
             {totalPages > 0 && <Pagination pages={totalPages} totalRecords={products.total} limit={limitOfFirstPage} skip={products.skip} handlePaginationClick={handlePaginationClick} />}
         </div>
-        <Footer />
+            <Footer />
         </div>
     );
 }
