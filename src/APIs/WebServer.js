@@ -17,4 +17,12 @@ export default class WebServer {
         const response = await axios.get(url);
         return response.data;
     }
+
+    async getCategoryList() {
+        const baseUrl = 'https://dummyjson.com/products/categories';
+        const endPoint = ``;
+        const url = `${baseUrl}${endPoint}`;
+        const response = await axios.get(url);
+        return response.data;
+    }
 }

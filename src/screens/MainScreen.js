@@ -4,10 +4,12 @@ import WebServer from "../APIs/WebServer";
 import Pagination from "../components/Pagination";
 import './MainScreen.css'
 import NavBar from "../components/NavBar";
+import CategorySelect from "../components/CategorySelect";
 
 export default function MainScreen() {
 
     const [products, setProduct] = useState([]);
+    const [categoryList, setCategoryList] = useState([]);
     const [totalPages, setTotalPages] = useState(0);
     const [limitOfFirstPage, setLimitOfFirstPage] = useState(0);
 
@@ -25,8 +27,13 @@ export default function MainScreen() {
 
             setUpPagination(productList.total, productList.limit);
         }
-
         fetchProducts();
+
+        const fetchCategoryList = async () => {
+            const categories = await webServer.getCategoryList();
+            setCategoryList(categories)
+        }
+        fetchCategoryList();
     }, []);
 
     const handlePaginationClick = (skip) => {
@@ -47,6 +54,7 @@ export default function MainScreen() {
     return (
         <div className="container">
             <NavBar handleSearchRequest={handleSearchRequest}/>
+            <CategorySelect categoryList={categoryList}/>
             <ProductList data={products} />
             {totalPages > 0 && <Pagination pages={totalPages} totalRecords={products.total} limit={limitOfFirstPage} skip={products.skip} handlePaginationClick={handlePaginationClick} />}
         </div>
