@@ -16,9 +16,9 @@ position: relative;
 
 .search-icon, .close-icon {
     position: absolute;
-    top: 2px;
+    top: 7px;
     left: 94%;
-    font-size: 1.1rem;
+    font-size: 0.7rem;
 }
 
 .close-icon {

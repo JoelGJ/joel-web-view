@@ -1,4 +1,6 @@
 import React, { useRef } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import './NavBar.css';
 
 export default function NavBar ({ handleSearchRequest }) {
@@ -38,7 +40,7 @@ export default function NavBar ({ handleSearchRequest }) {
             <div className="navbar row">
                 <div className="col-md-2">MoBooM</div>
                 <div className="col-md-6 search-bar-container">
-                    <span ref={searchIconRef} className="search-icon">⌕</span>
+                    <span ref={searchIconRef} className="search-icon"><FontAwesomeIcon icon={faSearch}/></span>
                     <span ref={closeIconRef} style={{display: 'none'}} onClick={HandleCloseIconClick} className="close-icon">x</span>
                     <input ref={searchBarInput} onBlur={handleSearchBarOnChange} onKeyUp={handleSearchBarOnKeyUp} className="form-control search-bar" type="text" placeholder="What do you want to buy today?"/>
                 </div>

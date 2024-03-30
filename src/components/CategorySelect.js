@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
-import './CategorySelect.css'; // Import CSS file for styling
+import './CategorySelect.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 export default function CategorySelect({ categoryList, handleCategorySelectOnChange }) {
 
@@ -57,6 +59,7 @@ export default function CategorySelect({ categoryList, handleCategorySelectOnCha
         <>
             <div className='container'>
                 <div ref={customSelectRef} className="custom-select form-control" onClick={() => customSelectOnClick()}>
+                    <span className='downward-arrow'><FontAwesomeIcon icon={faAngleDown}/></span>
                     <div ref={selectedItemRef} className="selected-item">Select Category</div>
                     <div ref={selectItemsRef} className="select-items">
                         {categoryList.map((value, index) => <div key={index} className="select-item" onClick={() => handleSelectEvent(value)}><label>{value}</label></div>)}

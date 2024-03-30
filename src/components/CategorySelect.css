@@ -12,6 +12,12 @@
 .selected-item {
     color: #909090;
 }
+.downward-arrow {
+    position: absolute;
+    top: 6px;
+    left: 90%;
+    font-size: 0.7rem;
+}
 
 .select-items {
     display: none;
