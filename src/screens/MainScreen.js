@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ProductList from "../components/ProductList";
 import WebServer from "../APIs/WebServer";
 import Pagination from "../components/Pagination";
+import './MainScreen.css'
 
 export default function MainScreen() {
 

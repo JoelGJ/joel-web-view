@@ -1,7 +1,4 @@
-.container {
-    padding-top: 15px;
-    padding-bottom: 30px;
-}
+
 .product-list-container {
     display: flex;
     flex-wrap: wrap;
@@ -65,22 +62,4 @@
 .product-stock {
     font-size: 12px;
     color: #d50000;
-}
-
-.pagination {
-    display: flex;
-    justify-content: end;
-    line-height: 1;
-}
-
-.page-item > .page-link {
-    font-weight: bold;
-    background-color: #ccc;
-    color: #000000;
-}
-
-.page-item > .page-link.current-page {
-    font-weight: bold;
-    background-color: black;
-    color: #ccc;
 }

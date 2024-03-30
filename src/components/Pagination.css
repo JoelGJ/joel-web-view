@@ -1,0 +1,19 @@
+
+
+.pagination {
+    display: flex;
+    justify-content: end;
+    line-height: 1;
+}
+
+.page-item > .page-link {
+    font-weight: bold;
+    background-color: #ccc;
+    color: #000000;
+}
+
+.page-item > .page-link.current-page {
+    font-weight: bold;
+    background-color: black;
+    color: #ccc;
+}
