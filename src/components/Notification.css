@@ -1,0 +1,14 @@
+.notification-container {
+    padding: 20px 40px;
+    border-radius: 5px;
+    color: #fff;
+    background-image : linear-gradient(to right, #000 40%, #ff8100);
+}
+
+.headline {
+    font-weight: bold;
+}
+
+.message {
+    font-size: 1rem;
+}
