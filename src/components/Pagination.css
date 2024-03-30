@@ -6,6 +6,9 @@
     line-height: 1;
 }
 
+.page-item {
+    cursor: pointer;
+}
 .page-item > .page-link {
     font-weight: bold;
     background-color: #ccc;

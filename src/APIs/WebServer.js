@@ -9,4 +9,12 @@ export default class WebServer {
         const response = await axios.get(url);
         return response.data;
     }
+
+    async searchProduct(value) {
+        const baseUrl = 'https://dummyjson.com/products/search';
+        const endPoint = `?q=${value}`;
+        const url = `${baseUrl}${endPoint}`;
+        const response = await axios.get(url);
+        return response.data;
+    }
 }

@@ -1,0 +1,30 @@
+.quick-links {
+    padding: 0px 15px;
+}
+
+.quick-links.active {
+    font-weight: bold;
+}
+
+.search-bar {
+    font-size: 0.8rem;
+}
+
+.search-bar-container {
+position: relative;
+}
+
+.search-icon, .close-icon {
+    position: absolute;
+    top: 2px;
+    left: 94%;
+    font-size: 1.1rem;
+}
+
+.close-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 1px;
+    left: 95%;
+    font-size: 1.1rem;
+}
