@@ -22,8 +22,6 @@ export default function Pagination ({pages, totalRecords, limit, skip, handlePag
     };
 
     for (let i = 1; i <= pages; i++) {
-        // console.log(skip, i + ' - 1 * ' + limit + ' = ' + (i - 1) * limit);
-        console.log('( ' + totalRecords + ' - ' + skip + ' + ' + limit + ' ) / ' + limit);
         let currentPageNumber = pages - Math.ceil((totalRecords - (skip + limit)) / limit);
         pageItems.push(
             <li key={i} className="page-item">
