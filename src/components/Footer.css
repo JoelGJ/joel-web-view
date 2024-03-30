@@ -1,0 +1,60 @@
+.footer-container {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    background-color: #f0f0f0;
+}
+
+.footer-quick-links-heading {
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.footer-quick-links {
+    font-size: 0.8rem;
+    padding-bottom: 5px;
+    color: grey;
+}
+
+.social-media-section {
+    font-size: 0.8rem;
+}
+.social-media-icons {
+    padding: 5px 15px 5px 0px;
+    font-size: 1.4rem;
+}
+
+.sign-up-section {
+    padding-top: 15px;
+    font-size: 0.8rem;
+}
+
+.subscribe-btn-div {
+    display: flex;
+    align-items: baseline;
+}
+
+.subscribe-btn {
+    background-color: black;
+    color: white
+}
+
+.rights-and-coockies {
+    padding-top: 15px;
+    color: grey;
+}
+
+.rights {
+    font-size: 0.8rem;
+    padding-bottom: 10px;
+}
+
+.privacy-copyrights {
+    font-size: 0.8rem;
+    padding-bottom: 10px;
+}
+
+.each-right {
+    text-decoration: underline;
+    padding: 0px 5px;
+}

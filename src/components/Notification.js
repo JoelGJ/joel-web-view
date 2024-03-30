@@ -6,8 +6,8 @@ export default function Notification() {
         <>
             <div className="container">
                 <div className="notification-container">
-                    <div className="headline">Good Friday</div>
-                    <div className="message">Flash sale begin in June. Get upto 80% discount on all products</div>
+                    <div className="headline">Coming Soon!</div>
+                    <div className="message">Flash sale begin in June. Get upto 80% discount on all products.</div>
                 </div>
             </div>
         </>

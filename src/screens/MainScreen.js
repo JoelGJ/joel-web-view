@@ -6,6 +6,7 @@ import './MainScreen.css'
 import NavBar from "../components/NavBar";
 import CategorySelect from "../components/CategorySelect";
 import Notification from "../components/Notification";
+import Footer from "../components/Footer";
 
 export default function MainScreen() {
 
@@ -61,12 +62,15 @@ export default function MainScreen() {
     }
 
     return (
+        <div>
         <div className="container">
             <NavBar handleSearchRequest={handleSearchRequest} />
             <Notification/>
             <CategorySelect categoryList={categoryList} handleCategorySelectOnChange={handleCategorySelectOnChange} />
             <ProductList data={products} />
             {totalPages > 0 && <Pagination pages={totalPages} totalRecords={products.total} limit={limitOfFirstPage} skip={products.skip} handlePaginationClick={handlePaginationClick} />}
+        </div>
+        <Footer />
         </div>
     );
 }
