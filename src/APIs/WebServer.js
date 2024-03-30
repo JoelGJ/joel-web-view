@@ -25,4 +25,11 @@ export default class WebServer {
         const response = await axios.get(url);
         return response.data;
     }
+
+    async getProductsOfCategory(category) {
+        const baseUrl = `https://dummyjson.com/products/category/${category}`;
+        const url = `${baseUrl}`;
+        const response = await axios.get(url);
+        return response.data;
+    }
 }

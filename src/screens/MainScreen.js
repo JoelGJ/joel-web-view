@@ -45,16 +45,24 @@ export default function MainScreen() {
 
     const handleSearchRequest = (value) => {
         webServer.searchProduct(value)
-        .then((response) => {
-            setProduct(response);
-            setUpPagination(response.total, response.limit)
-        });
+            .then((response) => {
+                setProduct(response);
+                setUpPagination(response.total, response.limit)
+            });
+    }
+
+    const handleCategorySelectOnChange = (category) => {
+        webServer.getProductsOfCategory(category)
+            .then((response) => {
+                setProduct(response);
+                setUpPagination(response.total, response.limit)
+            });
     }
 
     return (
         <div className="container">
-            <NavBar handleSearchRequest={handleSearchRequest}/>
-            <CategorySelect categoryList={categoryList}/>
+            <NavBar handleSearchRequest={handleSearchRequest} />
+            <CategorySelect categoryList={categoryList} handleCategorySelectOnChange={handleCategorySelectOnChange} />
             <ProductList data={products} />
             {totalPages > 0 && <Pagination pages={totalPages} totalRecords={products.total} limit={limitOfFirstPage} skip={products.skip} handlePaginationClick={handlePaginationClick} />}
         </div>
