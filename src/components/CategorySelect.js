@@ -10,33 +10,6 @@ export default function CategorySelect({ categoryList, handleCategorySelectOnCha
     const selectItemsRef = useRef(null);
     const selectedItemRef = useRef(null);
     const customSelectRef = useRef(null);
-    // const customSelects = document.querySelectorAll(".custom-select");
-
-    // customSelects.forEach(function (select) {
-    //     // select.style.display = 'none';
-    //     const selectSelected = select.querySelector(".select-selected");
-    //     const selectItems = select.querySelector(".select-items");
-
-    //     selectSelected.addEventListener("click", function () {
-    //         selectItems.classList.add("show");
-
-    //         const selectItem = select.querySelectorAll('.select-item');
-    //         selectItem.forEach(function (checkbox) {
-    //             checkbox.addEventListener("click", function () {
-    //                 selectSelected.textContent = checkbox.textContent;
-    //                 selectItems.classList.remove('show');
-    //             });
-    //         });
-    //     });
-
-
-    //     // when click anywhere outside select, hide drop down
-    //     document.addEventListener("click", function (event) {
-    //         if (!select.contains(event.target)) {
-    //             selectItems.classList.remove("show");
-    //         }
-    //     });
-    // });
 
     const handleSelectEvent = (event, value) => {
         if (activeItem) {
