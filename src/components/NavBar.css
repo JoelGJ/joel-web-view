@@ -28,3 +28,10 @@ position: relative;
     left: 94%;
     font-size: 0.8rem;
 }
+
+.brand-name {
+    font-weight: 800;
+}
+.need-color {
+    color: #ff00eb;
+}

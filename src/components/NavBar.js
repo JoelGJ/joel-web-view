@@ -39,7 +39,7 @@ export default function NavBar ({ handleSearchRequest }) {
         <>
         <div className="container">
             <div className="navbar row">
-                <div className="col-md-2">MoBooM</div>
+                <div className="col-md-2 brand-name"><span className="need-color">M</span>oBoo<span className="need-color">M</span></div>
                 <div className="col-md-6 search-bar-container">
                     <span ref={searchIconRef} className="search-icon"><FontAwesomeIcon icon={faSearch}/></span>
                     <span ref={closeIconRef} style={{display: 'none'}} onClick={HandleCloseIconClick} className="close-icon"><FontAwesomeIcon icon={faTimes}/></span>
