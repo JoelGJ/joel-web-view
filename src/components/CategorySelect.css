@@ -29,6 +29,7 @@
     z-index: 1;
     max-height: 200px;
     overflow-y: auto;
+    width: inherit;
 }
 
 .select-items::-webkit-scrollbar {
@@ -56,8 +57,16 @@
     cursor: pointer;
 }
 
-.select-items {
-    width: inherit;
+.select-item.active {
+    background-color: #e27200;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.select-item:hover {
+    background-color: #e5a361;
+    color: #fff;
+    border-radius: 5px;
 }
 
 .select-selected:focus,

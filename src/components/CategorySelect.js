@@ -1,9 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import './CategorySelect.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 export default function CategorySelect({ categoryList, handleCategorySelectOnChange }) {
+
+    const [activeItem, setActiveItem] = useState(null);
 
     const selectItemsRef = useRef(null);
     const selectedItemRef = useRef(null);
@@ -36,11 +38,17 @@ export default function CategorySelect({ categoryList, handleCategorySelectOnCha
     //     });
     // });
 
-    const handleSelectEvent = (value) => {
+    const handleSelectEvent = (event, value) => {
+        if (activeItem) {
+            activeItem.classList.remove('active');
+        }
         selectedItemRef.current.textContent = value;
         selectedItemRef.current.style.color = '#000';
         selectedItemRef.current.style.fontWeight = 'bold';
         handleCategorySelectOnChange(value);
+
+        setActiveItem(event.target);
+        event.target.classList.add('active');
     }
 
     
@@ -62,7 +70,7 @@ export default function CategorySelect({ categoryList, handleCategorySelectOnCha
                     <span className='downward-arrow'><FontAwesomeIcon icon={faAngleDown}/></span>
                     <div ref={selectedItemRef} className="selected-item">Select Category</div>
                     <div ref={selectItemsRef} className="select-items">
-                        {categoryList.map((value, index) => <div key={index} className="select-item" onClick={() => handleSelectEvent(value)}><label>{value}</label></div>)}
+                        {categoryList.map((value, index) => <div key={index} className="select-item" onClick={(event) => handleSelectEvent(event, value)}>{value}</div>)}
                     </div>
                 </div>
             </div>
