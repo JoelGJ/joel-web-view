@@ -39,10 +39,13 @@ export default function MainScreen() {
     }, []);
 
     const handlePaginationClick = (skip) => {
-        console.log(skip);
         webServer.getProducts(skip)
             .then((res) => setProduct(res));
 
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
     }
 
     const handleSearchRequest = (value) => {
@@ -63,13 +66,13 @@ export default function MainScreen() {
 
     return (
         <div>
-        <div className="container">
-            <NavBar handleSearchRequest={handleSearchRequest} />
-            <Notification/>
-            <CategorySelect categoryList={categoryList} handleCategorySelectOnChange={handleCategorySelectOnChange} />
-            <ProductList data={products} />
-            {totalPages > 0 && <Pagination pages={totalPages} totalRecords={products.total} limit={limitOfFirstPage} skip={products.skip} handlePaginationClick={handlePaginationClick} />}
-        </div>
+            <div className="container">
+                <NavBar handleSearchRequest={handleSearchRequest} />
+                <Notification />
+                <CategorySelect categoryList={categoryList} handleCategorySelectOnChange={handleCategorySelectOnChange} />
+                <ProductList data={products} />
+                {totalPages > 0 && <Pagination pages={totalPages} totalRecords={products.total} limit={limitOfFirstPage} skip={products.skip} handlePaginationClick={handlePaginationClick} />}
+            </div>
             <Footer />
         </div>
     );
